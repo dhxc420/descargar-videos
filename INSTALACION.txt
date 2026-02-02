@@ -1,0 +1,178 @@
+Descargador de Videos - Kit de Instalación
+============================================
+
+CONTENIDO DEL PAQUETE:
+├── descargar.py ........................ Script principal de descarga
+├── listar_formatos.py ................. Utilidad para ver formatos disponibles
+├── instalar_windows.bat ............... Instalador automático para Windows 11
+├── desinstalar_windows.bat ............ Desinstalador para Windows 11
+├── instalar_linux.sh .................. Instalador automático para Linux
+├── desinstalar_linux.sh ............... Desinstalador para Linux
+├── README.md .......................... Guía completa de uso
+└── INSTALACION.txt .................... Este archivo
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+INSTALACIÓN RÁPIDA - WINDOWS 11
+───────────────────────────────────────────────────────────────────────────────
+
+1. Haz clic derecho en: instalar_windows.bat
+2. Selecciona: "Ejecutar como administrador"
+3. Espera a que se complete
+4. Busca el acceso directo en tu Desktop
+
+¡Listo! Ahora puedes descargar videos usando el acceso directo.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+INSTALACIÓN RÁPIDA - LINUX (Ubuntu/Debian)
+───────────────────────────────────────────────────────────────────────────────
+
+1. Abre terminal en esta carpeta
+2. Ejecuta:
+   
+   chmod +x instalar_linux.sh
+   ./instalar_linux.sh
+
+3. Sigue las instrucciones en pantalla
+
+¡Listo! Ahora puedes ejecutar 'descargar' desde cualquier terminal.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+REQUISITOS DEL SISTEMA
+───────────────────────────────────────────────────────────────────────────────
+
+Windows 11:
+  ✓ Python 3.13+ (se instala automáticamente)
+  ✓ Node.js (se instala automáticamente)
+  ✓ FFmpeg (se instala automáticamente)
+
+Linux (Ubuntu/Debian):
+  ✓ Python 3.7+
+  ✓ Node.js
+  ✓ FFmpeg
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+CONFIGURACIÓN INICIAL
+───────────────────────────────────────────────────────────────────────────────
+
+Después de instalar, edita "descargar.py" y cambia esta línea:
+
+    url = "https://www.youtube.com/watch?v=DPrH1yZa6Tw"
+
+Por la URL del video que quieras descargar.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+CÓMO USAR
+───────────────────────────────────────────────────────────────────────────────
+
+WINDOWS:
+  • Haz doble clic en el acceso directo "Descargar Video" en tu Desktop
+  • O abre terminal y ejecuta: python descargar.py
+
+LINUX:
+  • En terminal, ejecuta: descargar
+  • O: python3 descargar.py
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+FORMATO Y OPCIONES
+───────────────────────────────────────────────────────────────────────────────
+
+Para ver todos los formatos disponibles:
+
+WINDOWS:
+  python listar_formatos.py
+
+LINUX:
+  python3 listar_formatos.py
+
+Esto te mostrará:
+  ID: 18 - 640x360 (360p) - Video + Audio ← Recomendado
+  ID: 137+140 - 1920x1080 (1080p) - Video + Audio
+  ID: best - Mejor calidad disponible
+
+Puedes cambiar el formato en descargar.py:
+  "format": "18/best"      ← Por defecto (360p o mejor)
+  "format": "best[height<=480]"  ← Solo hasta 480p
+  "format": "worst"        ← Mínima calidad/tamaño
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+DESINSTALACIÓN
+───────────────────────────────────────────────────────────────────────────────
+
+WINDOWS:
+  1. Haz clic derecho en: desinstalar_windows.bat
+  2. Selecciona: "Ejecutar como administrador"
+  3. Sigue las instrucciones
+
+LINUX:
+  1. Abre terminal en esta carpeta
+  2. Ejecuta:
+     chmod +x desinstalar_linux.sh
+     ./desinstalar_linux.sh
+  3. Sigue las instrucciones
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+SOLUCIÓN DE PROBLEMAS
+───────────────────────────────────────────────────────────────────────────────
+
+Error "HTTP 403 Forbidden":
+  → YouTube está bloqueando la descarga
+  → Intenta actualizar: pip install --upgrade yt-dlp
+
+Error "ffmpeg not found":
+  → FFmpeg no está instalado
+  → El script funcionará sin él (sin mezcla de audio/video)
+  → Instálalo manualmente si es necesario
+
+El video descarga muy lentamente:
+  → Algunos videos tienen limitaciones
+  → Prueba a cambiar el formato o la resolución
+
+"No supported JavaScript runtime":
+  → Node.js no se instaló correctamente
+  → Instálalo manualmente desde https://nodejs.org
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+
+RECURSOS
+───────────────────────────────────────────────────────────────────────────────
+
+Documentación oficial:
+  • yt-dlp: https://github.com/yt-dlp/yt-dlp
+  • Python: https://www.python.org
+  • Node.js: https://nodejs.org
+  • FFmpeg: https://ffmpeg.org
+
+Para más información, consulta README.md
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Versión: 1.0
+Última actualización: 2026-02-02
+

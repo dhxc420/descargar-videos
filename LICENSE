@@ -1,0 +1,150 @@
+# Descargador de Videos - YouTube
+Herramienta automática para descargar videos desde YouTube con soporte para múltiples resoluciones y formatos.
+
+## ✨ Características
+
+- ✅ Descarga videos de YouTube en múltiples resoluciones (144p hasta 1080p)
+- ✅ Merging automático de video + audio (con FFmpeg)
+- ✅ Reintentos automáticos en caso de fallos
+- ✅ Continuación de descargas interrumpidas
+- ✅ Soporte para Windows 11 y Linux
+- ✅ Instalación automática de dependencias
+- ✅ Interfaz simple y fácil de usar
+
+## 🚀 Inicio Rápido
+
+### Windows 11
+```bash
+# Instalación automática
+instalar_windows.bat
+
+# Uso
+python descargar.py
+```
+
+### Linux (Ubuntu/Debian)
+```bash
+# Instalación automática
+chmod +x instalar_linux.sh
+./instalar_linux.sh
+
+# Uso
+descargar
+```
+
+## 📋 Requisitos
+
+- Python 3.7+
+- Node.js
+- FFmpeg (opcional pero recomendado)
+
+Todos se instalan automáticamente con los scripts de instalación.
+
+## 📖 Documentación
+
+- [INSTALACION.txt](INSTALACION.txt) - Guía de instalación paso a paso
+- [README.md](README.md) - Documentación completa
+
+## 🎯 Uso Básico
+
+1. Edita `descargar.py` y cambia la URL:
+   ```python
+   url = "https://www.youtube.com/watch?v=VIDEO_ID"
+   ```
+
+2. Ejecuta el script:
+   ```bash
+   python descargar.py
+   ```
+
+3. El video se descargará en tu directorio actual
+
+## 📊 Listar Formatos Disponibles
+
+```bash
+python listar_formatos.py
+```
+
+Esto mostrará todos los formatos disponibles para el video.
+
+## ⚙️ Personalización
+
+Puedes cambiar el formato de descarga editando `descargar.py`:
+
+```python
+"format": "18/best"              # Por defecto (360p o mejor)
+"format": "137+140"              # 1080p (requiere ffmpeg)
+"format": "best[height<=480]"   # Solo hasta 480p
+"format": "worst"                # Mínima calidad
+```
+
+## 🔧 Solución de Problemas
+
+### Error "HTTP 403 Forbidden"
+```bash
+pip install --upgrade yt-dlp
+```
+
+### FFmpeg no encontrado
+El script funcionará sin él pero sin capacidad de mezclar audio/video.
+
+### El video descarga lentamente
+Algunos videos tienen limitaciones de descarga. Prueba reduciendo `concurrent_fragment_downloads`.
+
+## 📂 Estructura del Proyecto
+
+```
+descargar-videos/
+├── descargar.py              # Script principal
+├── listar_formatos.py        # Utilidad para listar formatos
+├── instalar_windows.bat      # Instalador Windows
+├── desinstalar_windows.bat   # Desinstalador Windows
+├── instalar_linux.sh         # Instalador Linux
+├── desinstalar_linux.sh      # Desinstalador Linux
+├── .gitignore               # Archivos ignorados por git
+├── README.md                # Este archivo
+├── INSTALACION.txt          # Guía de instalación
+└── LICENSE                  # Licencia
+```
+
+## 📄 Licencia
+
+Este proyecto utiliza [yt-dlp](https://github.com/yt-dlp/yt-dlp) bajo licencia Unlicense.
+
+## 🔗 Enlaces Útiles
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - Descargador de videos
+- [FFmpeg](https://ffmpeg.org/) - Procesador multimedia
+- [Node.js](https://nodejs.org/) - Runtime de JavaScript
+- [Python](https://www.python.org/) - Lenguaje de programación
+
+## ⚠️ Nota Legal
+
+Este software es para **uso personal**. Respeta los derechos de autor y los términos de servicio de YouTube. No uses este script para:
+- Descargar contenido protegido sin permiso
+- Distribuir contenido descargado
+- Eludir medidas de protección
+
+## 💬 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+1. Fork el proyecto
+2. Crea una rama para tu feature
+3. Haz commit de tus cambios
+4. Push a la rama
+5. Abre un Pull Request
+
+## 📞 Soporte
+
+Si encuentras problemas:
+1. Consulta [INSTALACION.txt](INSTALACION.txt)
+2. Abre un issue en GitHub
+3. Verifica que todas las dependencias estén instaladas
+
+---
+
+**Versión:** 1.0  
+**Última actualización:** 2026-02-02  
+**Autor:** Tu nombre aquí
+
+Hecho con ❤️ para la comunidad
